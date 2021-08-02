@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.nav-link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.nav {
+  float: right;
+}
+
 .modal-footer {
   flex-basis: 100%;
   flex-grow: 1;

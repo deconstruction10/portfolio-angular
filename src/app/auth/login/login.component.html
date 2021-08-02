@@ -25,10 +25,8 @@
     <button class="signup-btn btn btn-primary">Sign In</button>
   </div>
 </div>
-<!--<hr>-->
-<div class="modal-footer container">
-  <p class="lead">Forgot Password</p>
-  <a routerLink="/reset-password" class="link link-primary link-hover-underlined text-decoration-underline">Reset</a>
-  <p class="lead">Don't have an account?</p>
-  <a  routerLink="/register" class="link link-primary link-hover-underlined text-decoration-underline">Sign Up</a>
-</div>
+
+<nav class="nav">
+  <a (click)="openResetModal()" class="nav-link">Reset Password</a>
+  <a (click)="openRegisterModal()" class="nav-link">Sign Up</a>
+</nav>

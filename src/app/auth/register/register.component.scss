@@ -7,7 +7,6 @@
 }
 
 .social {
-  //margin-left: 500px;
   padding: 20px;
 }
 
@@ -21,17 +20,17 @@
   box-shadow: rgb(0 0 0 / 11%) 0 - 1px;
   text-align: center;
   line-height: 1.7rem;
-  //margin-bottom: 30px;
+}
+
+.nav-link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.nav {
+  float: right;
 }
 
 .form-check-label {
-
-}
-
-.social > .social-google > .social-facebook {
-  @media (min-height: 800px) and (max-height: 1200px) {
-    .social-google {
-
-    }
-  }
+  height: 10px;
 }

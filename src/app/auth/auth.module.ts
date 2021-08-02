@@ -1,7 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AuthRoutingModule } from './auth-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
@@ -23,7 +22,6 @@ import {RouterModule} from "@angular/router";
   imports: [
     CommonModule,
     RouterModule,
-    AuthRoutingModule,
     FontAwesomeModule,
     ShowHidePasswordModule
   ],
