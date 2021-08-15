@@ -3,26 +3,40 @@
   <p class="message-signin lead">Sign into your account here.</p>
 </div>
 
-
 <div class="container">
   <div class="row">
     <h1 class="signIn-header lead display-3 p-3 mb-3">Sign In</h1>
-    <div class="form-floating mb-3">
-      <input type="email" class="email-username-input form-control" id="EmailfloatingInput" placeholder="Email / Username">
-      <label for="emailfloatingInput">
-        <i class="pi pi-user"></i>
-        Email / Username</label>
-    </div>
-    <div class="form-floating mb-3">
-      <show-hide-password>
-      <input type="password" class="password-input form-control" id="PasswordfloatingInput" placeholder="Password">
-      </show-hide-password>
-      <label for="passwordfloatingInput"></label>
-
-    </div>
+    <form [formGroup]="loginForm">
+      <div class="form-floating mb-3">
+        <input (keydown)="handleEmailInput($event)"
+               #emailInput
+               formControlName="email"
+               [ngClass]="{'withError': email?.errors}"
+               class="email-username-input form-control"
+               id="EmailfloatingInput"
+               placeholder="Email / Username">
+        <label for="emailfloatingInput">
+          <i class="pi pi-user"></i>
+          Email / Username</label>
+      </div>
+      <div class="form-floating mb-3">
+        <show-hide-password>
+          <input (keydown)="handlePasswordInput($event)"
+                 formControlName="password"
+                 #passwordInput
+                 [ngClass]="{'withError': password?.errors}"
+                 type="password"
+                 class="password-input form-control"
+                 id="PasswordfloatingInput"
+                 placeholder="Password">
+        </show-hide-password>
+        <label for="passwordfloatingInput"></label>
+      </div>
+    </form>
   </div>
+
   <div class="signup">
-    <button class="signup-btn btn btn-primary">Sign In</button>
+    <button #signUpBtn (click)="showErrorMessage()" class="signup-btn btn btn-primary">Sign In</button>
   </div>
 </div>
 
@@ -30,3 +44,8 @@
   <a (click)="openResetModal()" class="nav-link">Reset Password</a>
   <a (click)="openRegisterModal()" class="nav-link">Sign Up</a>
 </nav>
+<div *ngIf="withError" class="error-message bg-danger text-white">
+  Email or password not valid
+</div>
+
+

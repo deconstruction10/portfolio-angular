@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthModule} from "./auth/auth.module";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -15,6 +15,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { LanguageComponent } from './components/language/language.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -27,13 +28,15 @@ import { LanguageComponent } from './components/language/language.component';
     LanguageComponent
   ],
   imports: [
+    ReactiveFormsModule,
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     AuthModule,
     FontAwesomeModule,
     AppRoutingModule,
     MatDialogModule,
-    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
